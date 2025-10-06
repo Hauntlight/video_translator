@@ -10,8 +10,6 @@ Hai mai desiderato tradurre un video dall'italiano all'inglese, sincronizzando p
 Questo tool diventa il tuo assistente personale per la localizzazione di contenuti video. Sfruttando la potenza dell'intelligenza artificiale per la trascrizione e la traduzione, ti offre un'interfaccia semplice per revisionare il testo e genera un nuovo video con una traccia audio tradotta e perfettamente sincronizzata.
 
 
-*(Esempio dell'interfaccia utente in funzione)*
-
 ---
 
 ## ✨ Caratteristiche Principali
