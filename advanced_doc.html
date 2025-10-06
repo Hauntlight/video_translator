@@ -173,13 +173,50 @@
     <h3>1.3. Rubber Band Library</h3>
     <p>Questa è la libreria che alimenta <code>pyrubberband</code> per modificare la velocità dell'audio con alta qualità.</p>
 
-     <div class="os-section">
-        <h4><img src="https://img.icons8.com/color/24/000000/windows-10.png" alt="Windows icon"/> Windows</h4>
+    <div class="os-section">
+        <h4><img src="https://img.icons8.com/color/24/000000/windows-10.png" alt="Windows icon"/> Windows (Metodo Manuale Dettagliato)</h4>
         <ol>
-            <li>Il modo più semplice è usare il gestore di pacchetti `winget`. Apri il Prompt dei comandi e digita:
-                <pre><code>winget install breakfast.rubberband</code></pre>
+            <li><strong>Download:</strong> Scarica il file ZIP da questo link ufficiale: <a href="https://breakfastquay.com/files/releases/rubberband-4.0.0-gpl-executable-windows.zip" target="_blank">rubberband-4.0.0-gpl-executable-windows.zip</a>.</li>
+
+            <li><strong>Creazione Cartella:</strong> Crea una cartella permanente dove tenere il programma. Un percorso consigliato e semplice da ricordare è <code>C:\rubberband</code>. Per farlo:
+                <ul>
+                    <li>Apri "Esplora File".</li>
+                    <li>Vai su "Questo PC".</li>
+                    <li>Apri il tuo disco principale (solitamente <code>C:</code>).</li>
+                    <li>Fai click con il tasto destro su uno spazio vuoto, scegli "Nuovo" -> "Cartella" e rinominala <code>rubberband</code>.</li>
+                </ul>
             </li>
-            <li><strong>Verifica:</strong> Apri un <strong>nuovo</strong> Prompt dei comandi e digita <code>rubberband --version</code>. Dovresti vedere le informazioni sulla versione.</li>
+
+            <li><strong>Estrazione dei File:</strong>
+                <ul>
+                    <li>Apri il file <code>.zip</code> che hai scaricato.</li>
+                    <li>Vedrai una cartella al suo interno (es. <code>rubberband-4.0.0-gpl-executable-windows</code>).</li>
+                    <li>Trascina questa cartella all'interno della directory <code>C:\rubberband</code> che hai appena creato.</li>
+                </ul>
+                <div class="note">Alla fine di questo passaggio, dovresti avere un percorso simile a: <code>C:\rubberband\rubberband-4.0.0-gpl-executable-windows</code>. All'interno di quest'ultima cartella, troverai il file <code>rubberband.exe</code>.</div>
+            </li>
+
+            <li><strong>Aggiunta alle Variabili d'Ambiente (PATH):</strong> Questo è il passaggio cruciale che permette al sistema di trovare <code>rubberband.exe</code>.
+                <ul>
+                    <li>Copia il percorso completo della cartella che contiene <code>rubberband.exe</code>. Nell'esempio precedente, il percorso da copiare è: <code>C:\rubberband\rubberband-4.0.0-gpl-executable-windows</code>.</li>
+                    <li>Premi il tasto Windows, digita <code>variabili d'ambiente</code> e seleziona "Modifica le variabili d'ambiente per l'account".</li>
+                    <li>Nella finestra che si apre, in basso, clicca su "Variabili d'ambiente...".</li>
+                    <li>Nella sezione "Variabili utente per [il tuo nome utente]", trova e seleziona la variabile chiamata <strong><code>Path</code></strong>, poi clicca su "Modifica...".</li>
+                    <li>Nella nuova finestra, clicca su "Nuovo" sul lato destro. Si aprirà una nuova riga vuota.</li>
+                    <li>Incolla il percorso che hai copiato (<code>C:\rubberband\rubberband-4.0.0-gpl-executable-windows</code>).</li>
+                    <li>Clicca <strong>OK</strong> su tutte le finestre aperte per salvare le modifiche.</li>
+                </ul>
+            </li>
+
+            <li><strong>Verifica dell'Installazione:</strong>
+                <ul>
+                    <li><strong>Importante:</strong> Chiudi e riapri tutte le finestre del Prompt dei comandi (CMD) o del terminale che potresti avere aperte.</li>
+                    <li>Apri un <strong>nuovo</strong> Prompt dei comandi e digita il comando:
+                        <pre><code>rubberband --version</code></pre>
+                    </li>
+                    <li>Se l'installazione è andata a buon fine, vedrai stampate le informazioni sulla versione di Rubber Band. Se ricevi un errore come "'rubberband' non è riconosciuto", qualcosa è andato storto nel passaggio precedente.</li>
+                </ul>
+            </li>
         </ol>
     </div>
 

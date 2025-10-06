@@ -2,6 +2,8 @@ import os
 import yaml
 import threading
 from kivy.clock import Clock
+from moviepy.editor import VideoFileClip
+
 from src.core import audio_processing, speech_to_text, text_processing, translation, text_to_speech
 from src.core.utils import setup_directories, get_output_paths
 from src.io import file_saver, file_loader
@@ -132,7 +134,7 @@ class GuiController:
             self.current_stage = 'translation'
             file_saver.save_text_file(translated_text, self.output_paths['translated_transcription'])
 
-            Clock.schedule_once(lambda dt: self.view.set_state_ready_to_generate(translated_text)) # <-- RIGA CORRETTA
+            Clock.schedule_once(lambda dt: self.view.set_state_ready_to_generate(translated_text))
 
         except Exception as e:
             logger.error(f"Errore nel flow di traduzione: {e}")
@@ -142,6 +144,7 @@ class GuiController:
     def start_generation(self, instance):
         instance.disabled = True
         self.view.save_button.disabled = True
+        # Passiamo il target del thread alla nuova funzione wrapper
         thread = threading.Thread(target=self._run_generation_flow)
         thread.start()
 
@@ -152,11 +155,23 @@ class GuiController:
             parsed_data = text_processing.parse_transcription_file(translated_content)
             translated_texts = [item['text'] for item in parsed_data]
 
+            logger.info("Recupero durata totale del video originale...")
+            video_clip = VideoFileClip(self.video_path)
+            total_duration_ms = int(video_clip.duration * 1000)
+            video_clip.close()
+            logger.info(f"Durata totale: {total_duration_ms / 1000:.2f} secondi.")
+
             Clock.schedule_once(lambda dt: self.view.update_status("2/3 - Generazione audio...", 40))
             target_lang = self.config['languages']['target']
             temp_dir = self.config['output']['temp_dir']
-            final_audio_track = text_to_speech.create_final_audio_track(parsed_data, translated_texts, temp_dir,
-                                                                        target_lang)
+
+            final_audio_track = text_to_speech.create_final_audio_track(
+                parsed_data,
+                translated_texts,
+                temp_dir,
+                total_duration_ms,
+                target_lang
+            )
             file_saver.save_audio_file(final_audio_track, self.output_paths['translated_audio'])
 
             Clock.schedule_once(lambda dt: self.view.update_status("3/3 - Assemblaggio video finale...", 80))
