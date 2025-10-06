@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida all'Installazione - Video Translator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; margin-top: 40px; }
+        h3 { font-size: 1.5em; border-bottom: 1px solid #ccc; }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .note {
+            background-color: #e8f6fd;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background-color: #fef5e7;
+            border-left: 5px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .os-section {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+        .os-section h4 {
+            font-size: 1.2em;
+            color: #3498db;
+            margin-top: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guida all'Installazione e Uso di Video Translator</h1>
+    <p class="note">
+        Questa guida ti accompagnerà nell'installazione e nell'utilizzo del tool. Inizia con il metodo di <strong>Installazione Rapida</strong>, che è il più semplice e consigliato per tutti gli utenti.
+    </p>
+
+    <h2 id="installazione-rapida">Fase 1: Installazione Rapida (Consigliata)</h2>
+    <p>Questi script automatizzano l'installazione delle dipendenze di sistema e delle librerie Python. L'unico prerequisito è avere <strong>Python 3.11</strong> già installato sul tuo sistema.</p>
+
+    <div class="os-section">
+        <h4><img src="https://img.icons8.com/color/24/000000/windows-10.png" alt="Windows icon"/> Windows</h4>
+        <ol>
+            <li>Assicurati di aver installato Python 3.11 spuntando l'opzione "Add to PATH".</li>
+            <li>Trova il file <code>setup.bat</code> nella cartella del progetto.</li>
+            <li>Fai <strong>click con il tasto destro</strong> sul file e scegli <strong>"Esegui come amministratore"</strong>.</li>
+            <li>Lo script si occuperà di tutto. Al termine, segui le istruzioni a schermo per avviare il programma.</li>
+        </ol>
+    </div>
+
+    <div class="os-section">
+        <h4><img src="https://img.icons8.com/ios-filled/24/mac-os.png" alt="macOS icon"/> / <img src="https://img.icons8.com/color/24/linux.png" alt="Linux icon"/> macOS e Linux</h4>
+        <ol>
+            <li>Assicurati di aver installato Python 3.11.</li>
+            <li>Apri il <strong>Terminale</strong> e naviga fino alla cartella del progetto.</li>
+            <li>Rendi lo script eseguibile con il seguente comando:
+                <pre><code>chmod +x setup.sh</code></pre>
+            </li>
+            <li>Esegui lo script:
+                <pre><code>./setup.sh</code></pre>
+            </li>
+            <li>Ti potrebbe essere richiesta la password di amministratore per installare i pacchetti. Al termine, segui le istruzioni a schermo.</li>
+        </ol>
+    </div>
+    <p class="warning">Se l'installazione rapida fallisce, non preoccuparti. Puoi seguire i passaggi dettagliati nella sezione <strong>Installazione Manuale</strong> qui sotto.</p>
+
+    <h2 id="installazione-manuale">Fase 2: Installazione Manuale (Avanzata)</h2>
+            <strong>Visualizza la <a href="advanced_doc.html" target="_blank">guida avanzata</a></strong>
+    
+    <h2 id="utilizzo">Fase 3: Esecuzione e Utilizzo</h2>
+    <p>Una volta completata l'installazione, sei pronto ad usare il tool.</p>
+    <ol>
+        <li><strong>Avvia l'Applicazione:</strong> Assicurati che l'ambiente virtuale sia attivo e lancia il programma:
+            <pre><code>python main.py</code></pre>
+        </li>
+        <li><strong>Seleziona il Video:</strong>
+            <ul>
+                <li>Clicca sul pulsante "Seleziona Video (.mp4)".</li>
+                <li>Scegli un file video dal tuo computer. L'applicazione controllerà automaticamente se hai già iniziato a lavorare su questo file.</li>
+            </ul>
+        </li>
+        <li><strong>Flusso di Lavoro:</strong>
+            <ol>
+                <li><strong>Trascrizione:</strong> Clicca su <strong>"1. Trascrivi"</strong>. Il tool estrarrà l'audio e lo convertirà in testo italiano. Questo è il passaggio più lungo. Al termine, il testo apparirà nell'editor.</li>
+                <li><strong>Revisione (Italiano):</strong> Correggi eventuali errori di trascrizione direttamente nell'area di testo. Clicca su <strong>"Salva Modifiche al Testo Corrente"</strong> per salvare il tuo lavoro.</li>
+                <li><strong>Traduzione:</strong> Clicca su <strong>"2. Traduci"</strong>. Il testo italiano verrà tradotto in inglese e sostituirà il contenuto dell'editor.</li>
+                <li><strong>Revisione (Inglese):</strong> Allo stesso modo, puoi correggere la traduzione automatica per migliorarne la qualità. Ricorda di salvare le modifiche.</li>
+                <li><strong>Generazione Video:</strong> Clicca su <strong>"3. Genera Video"</strong>. Il tool genererà l'audio inglese, lo sincronizzerà con i tempi originali e lo unirà al video originale (senza audio).</li>
+            </ol>
+        </li>
+        <li><strong>Risultato Finale:</strong>
+            <ul>
+                <li>Troverai il video finale con audio in inglese nella cartella <strong><code>output</code></strong>.</li>
+                <li>Nella stessa cartella, troverai anche i file di testo con la trascrizione (<code>_it.txt</code>) e la traduzione (<code>_en.txt</code>) per poterli riutilizzare o modificare in futuro.</li>
+            </ul>
+        </li>
+    </ol>
+    <div class="note">
+        <strong>Funzione di Ripresa Automatica:</strong> Se selezioni un video per cui hai già generato una trascrizione o una traduzione, l'applicazione caricherà automaticamente lo stato più avanzato del tuo lavoro, permettendoti di ripartire da dove eri rimasto.
+    </div>
+    
+    <h2 id="configurazione">Fase 4: Configurazione e Personalizzazione</h2>
+    <div class="note">
+        <strong>Visualizza la <a href="advanced_doc.html" target="_blank">guida avanzata</a></strong>
+	</div>
+
+    <h2 id="troubleshooting">Risoluzione dei Problemi Comuni</h2>
+    <div class="note">
+        <strong>Visualizza la <a href="advanced_doc.html" target="_blank">guida avanzata</a></strong>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Lingue per la traduzione
+languages:
+  source: 'it-IT'
+  target: 'en'
+
+# Parametri per il rilevamento delle pause (in millisecondi)
+silence_detection:
+  min_silence_len: 700  # Durata minima di una pausa per essere considerata fine frase
+  silence_thresh: -40   # Soglia di silenzio in dBFS
+
+# Parametri per lo Speech-to-Text
+stt:
+  # Modelli disponibili: tiny, base, small, medium, large
+  # 'small' o 'medium' sono un buon compromesso tra velocità e accuratezza.
+  whisper_model: 'medium'
+
+# Parametri Text-to-Speech
+tts:
+  slow_factor: 0.9  # Fattore di rallentamento se l'audio è troppo corto
+  fast_factor: 1.1  # Fattore di velocizzazione se l'audio è troppo lungo
+
+# Percorsi di output
+output:
+  temp_dir: 'temp'
+  final_dir: 'output'
