@@ -53,7 +53,8 @@ Una volta completata l'installazione, avviare il tool è semplicissimo.
 2.  **Lancia l'applicazione**:
     ```bash
     python main.py
-    ```3.  **Segui il flusso di lavoro a 3 passaggi nell'app**:
+    ```
+3.  **Segui il flusso di lavoro a 3 passaggi nell'app**:
     *   Seleziona il tuo video `.mp4`.
     *   Clicca su **"1. Trascrivi"** e attendi.
     *   Correggi il testo (opzionale) e clicca su **"2. Traduci"**.
