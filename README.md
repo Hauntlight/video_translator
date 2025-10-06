@@ -38,7 +38,7 @@ Abbiamo reso l'installazione un gioco da ragazzi. L'unico prerequisito è avere 
 2.  Rendi lo script eseguibile: `chmod +x setup.sh`
 3.  Eseguilo: `./setup.sh`
 
-> Per un'installazione manuale, per risolvere problemi o per maggiori dettagli, consulta la nostra **[Guida Completa all'Installazione](Guida_Installazione.html)**.
+> Per un'installazione manuale, per risolvere problemi o per maggiori dettagli, consulta la nostra **[Guida Completa all'Installazione](advanced_doc.html)**.
 
 ---
 
