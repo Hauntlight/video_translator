@@ -4,7 +4,9 @@ import os
 import yaml
 
 logger = get_logger(__name__)
-#language = "it"
+
+
+# language = "it"
 
 
 # Funzione per caricare il modello dinamicamente
@@ -53,11 +55,13 @@ def transcribe_audio_segments(audio_segments, temp_dir):
                 # Calcola la durata direttamente in millisecondi
                 duration_ms = end_ms - start_ms
 
-                # Formattazione timestamp (rimane in hh:mm:ss per leggibilità)
-                start_sec = start_ms / 1000
+                # Formattazione timestamp con precisione al millisecondo
+                start_sec = start_ms / 1000.0
                 hours, rem = divmod(start_sec, 3600)
-                minutes, seconds = divmod(rem, 60)
-                timestamp = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
+                minutes, seconds_float = divmod(rem, 60)
+
+                # Formato: hh:mm:ss.ms (secondi con 3 decimali)
+                timestamp = f"{int(hours):02}:{int(minutes):02}:{seconds_float:06.3f}"
 
                 # Usa la durata in millisecondi nel formato finale
                 formatted_line = f"[{timestamp}][{int(duration_ms)}] \"{text}\""

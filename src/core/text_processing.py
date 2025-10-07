@@ -15,8 +15,8 @@ def parse_transcription_file(file_content):
         list: Una lista di dizionari, ognuno con 'timestamp', 'duration', 'text'.
     """
     parsed_data = []
-    # Regex per catturare [hh:mm:ss][durata]"testo"
-    pattern = re.compile(r'\[(\d{2}:\d{2}:\d{2})\]\[(\d+)\]\s*"(.*?)"')
+    # Regex per catturare [hh:mm:ss.ms][durata]"testo"
+    pattern = re.compile(r'\[(\d{2}:\d{2}:\d{2}\.\d{3})\]\[(\d+)\]\s*"(.*?)"')
 
     lines = file_content.strip().split('\n')
     for line in lines:

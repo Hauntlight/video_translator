@@ -128,14 +128,16 @@ def create_final_audio_track(parsed_data, translated_texts, temp_dir, total_dura
         text = translated_texts[i]
         target_duration_ms = int(data["duration"])
 
-        #  Calcolo del timestamp in millisecondi
-        timestamp_parts = [int(p) for p in data["timestamp"].split(":")]
-        if len(timestamp_parts) == 3:
-            start_time_ms = timestamp_parts[0] * 3600000 + timestamp_parts[1] * 60000 + timestamp_parts[2] * 1000
-        elif len(timestamp_parts) == 2:
-            start_time_ms = timestamp_parts[0] * 60000 + timestamp_parts[1] * 1000
-        else:
-            start_time_ms = timestamp_parts[0] * 1000
+        #  Calcolo del timestamp in millisecondi dal formato hh:mm:ss.ms
+        try:
+            timestamp_parts = data["timestamp"].split(":")
+            hours = int(timestamp_parts[0])
+            minutes = int(timestamp_parts[1])
+            seconds = float(timestamp_parts[2])
+            start_time_ms = int((hours * 3600 + minutes * 60 + seconds) * 1000)
+        except (ValueError, IndexError) as e:
+            logger.error(f"Formato timestamp non valido '{data['timestamp']}'. Salto segmento. Errore: {e}")
+            continue
 
         segment_path = os.path.join(temp_dir, f"segment_{i}.wav")
 
