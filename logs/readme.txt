@@ -1,0 +1,1 @@
+app.log will contain the logs
