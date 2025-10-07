@@ -10,8 +10,9 @@ def load_whisper_model():
     """Carica il modello Whisper specificato nel file di configurazione."""
     try:
         with open('config/settings.yaml', 'r') as f:
-            model_name = yaml.safe_load(f)['stt']['whisper_model']
-            language = yaml.safe_load(f)['languages']['source']
+            config = yaml.safe_load(f)
+            model_name = config['stt']['whisper_model']
+            language = config['languages']['source']
         logger.info(f"Caricamento del modello Whisper '{model_name}' in corso...")
         model = whisper.load_model(model_name)
         logger.info(f"Modello Whisper '{model_name}' caricato con successo.")
