@@ -1,6 +1,6 @@
 # Lingue per la traduzione
 languages:
-  source: 'it-IT'
+  source: 'it'
   target: 'en'
 
 # Parametri per il rilevamento delle pause (in millisecondi)

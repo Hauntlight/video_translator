@@ -4,16 +4,18 @@ import os
 import yaml
 
 logger = get_logger(__name__)
-
+language = "it"
 # Funzione per caricare il modello dinamicamente
 def load_whisper_model():
     """Carica il modello Whisper specificato nel file di configurazione."""
     try:
         with open('config/settings.yaml', 'r') as f:
             model_name = yaml.safe_load(f)['stt']['whisper_model']
+            language = yaml.safe_load(f)['languages']['source']
         logger.info(f"Caricamento del modello Whisper '{model_name}' in corso...")
         model = whisper.load_model(model_name)
         logger.info(f"Modello Whisper '{model_name}' caricato con successo.")
+
         return model
     except Exception as e:
         logger.error(f"Impossibile caricare il modello Whisper: {e}")
@@ -40,7 +42,7 @@ def transcribe_audio_segments(audio_segments, temp_dir):
         chunk.export(chunk_path, format="wav")
 
         try:
-            result = model.transcribe(chunk_path, language="it")
+            result = model.transcribe(chunk_path, language=language)
             text = result["text"].strip()
 
             if text:
