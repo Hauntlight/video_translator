@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Kivy-purple.svg)](https://kivy.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](Guida_Installazione.html)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](base_doc.html)
 
 Hai mai desiderato tradurre un video dall'italiano all'inglese, sincronizzando perfettamente l'audio, senza dover usare complessi software di video editing? **Video Translator** è la soluzione che fa per te.
 
