@@ -32,8 +32,8 @@ def get_output_paths(video_path, config):
 
     return {
         "audio": os.path.join(temp_dir, f"{base_name}_audio.wav"),
-        "transcription": os.path.join(final_dir, f"{base_name}_transcription_it.txt"),
-        "translated_transcription": os.path.join(final_dir, f"{base_name}_transcription_en.txt"), # NUOVO
+        "transcription": os.path.join(final_dir, f"{base_name}_transcription_{config['languages']['source']}.txt"),
+        "translated_transcription": os.path.join(final_dir, f"{base_name}_transcription_{config['languages']['target']}.txt"), # NUOVO
         "translated_audio": os.path.join(temp_dir, f"{base_name}_translated_audio.mp3"),
         "final_video": os.path.join(final_dir, f"{base_name}_translated.mp4")
     }
